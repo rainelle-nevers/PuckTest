@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"lang="en">
+    <head>
+        <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/workitt.css"> 
+        <title>Workitt</title>
+    </head>
+    <body>
+        <CENTER>
+            <div class="header">
+                <h1><img src="images/workitt-header.jpg" alt=header ></h1>
+                <div class="navbar">
+                    <a href="workitt.html">Home</a> |
+                    <a href="profile.html">Profile</a> |
+                    <a href="createworkout.html">Create&nbsp;A&nbsp;Workout</a> |
+                    <a href="accessories.html">Fitness&nbsp;Accessories</a>
+                </div>
+                <p>&nbsp;</p>
+            </div>
+        </CENTER>   
+
+        <CENTER>
+            <div class="body">
+                <form>
+        <table class="table1" border="7" bordercolor=WHITE width="250" align="center" bgcolor="#ffffff">
+          <thead>
+            <tr>
+              <th colspan="2"><font size=5>
+                Target Heart Rate</font>
+              </th>
+            </tr>
+            <tr>&nbsp;</tr>
+            <tr>&nbsp;</tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center">
+                <label for="age">Age:</label>
+              </td>
+              <td align="center">
+                <input type="text" id="age" name="age" size="6"> years
+              </td>
+            </tr>
+            </tbody>
+            <thead>
+            <tr>
+              <th colspan="2" align="center">
+                <input id="calcButton" type="button" value="calculate" />
+                <span id="error"></span>
+              </th>
+            </tr>
+            <tr>&nbsp;</tr>
+            <tr>&nbsp;</tr>
+            <tr>&nbsp;</tr>
+            <tr>&nbsp;</tr>
+            <tr>&nbsp;</tr>
+            <tr>&nbsp;</tr>
+            <tr>
+                <th colspan="2">
+                    Your Target Heart Rate Zone is:&nbsp;<span id="THRzone"></span>
+                </th>
+            </tr>
+        </thead>
+    </table>
+ </form> 
+ <p>*Your target heart rate zone is the zone in which your heart rate should be in when exercising to have the most effective workout for improving your fitness and burning calories.</p> 
+</div></CENTER>
+<script>
+            document.getElementById("calcButton").onclick = thr;
+
+            function thr(){
+                var age = document.getElementById("age").value;
+                if(age == ""){
+                    document.getElementById("error").innerHTML = "This field is required.";
+                }
+                else
+                {
+                    var THRmax = (220-age)*.85;
+                    var THRmin = (220-age)*.7;
+                    document.getElementById("THRzone").innerHTML = THRmin + "-" + THRmax;
+                }
+            }
+        </script>
+</body>
+</html>
