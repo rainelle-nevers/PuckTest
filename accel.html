@@ -79,9 +79,11 @@ function onLine(v) {
 
 if(rec_flag) {
 
-var x = new Date(); // current time
+var x = parseFloat(v);
 
 var y = parseFloat(v);
+
+var z = parseFloat(v);
 
 if ( x.getTime() >= date_win_max) {
 
@@ -93,7 +95,7 @@ g.updateOptions( { dateWindow : [date_win_min, date_win_max] } );
 
 };
 
-data.push([x, y]);
+data.push([x, y, z]);
 
 g.updateOptions( { 'file': data } );
 
